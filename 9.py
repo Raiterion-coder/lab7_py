@@ -1,11 +1,13 @@
 import requests
 
+API_KEY = ""
+
 cities = input("Введите города через запятую: ").split(",")
 cities = [city.strip() for city in cities]
 
 coordinates = []
 for city in cities:
-    url = f"https://geocode-maps.yandex.ru/1.x/?apikey=fba08131-15fc-486c-822d-28e668154c63&geocode={city}&format=json"
+    url = f"https://geocode-maps.yandex.ru/1.x/?apikey={API_KEY}&geocode={city}&format=json"
     response = requests.get(url)
     data = response.json()
 
